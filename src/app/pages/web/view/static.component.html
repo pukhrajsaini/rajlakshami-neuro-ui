@@ -1,0 +1,77 @@
+
+<nav class="fill--primary mat-elevation-z2">
+    <button mat-icon-button color="primary" (click)="isMenuHidden = !isMenuHidden">
+        <mat-icon>{{isMenuHidden ? 'menu' : 'close'}}</mat-icon>
+    </button>
+    <button mat-button (click)="onNavigate('home')">Home</button>
+    <button mat-button (click)="onNavigate('about-us')">About Us</button>
+    <button mat-button (click)="onNavigate('why-us')">Why Choose Us</button>
+    <button mat-button (click)="onNavigate('contact-us')">Contact Us</button>
+    <div style="flex: 1;"></div>
+    <button mat-stroked-button (click)="onNavigate('appointment-form')" class="button--round">
+        <mat-icon>event</mat-icon>&nbsp;&nbsp;&nbsp;Appointment
+    </button>
+    <div class="menu-bar mat-elevation-z2" [class.menu-hidden]="isMenuHidden">
+        <div class="menu-wrapper">
+            <button mat-button (click)="onNavigate('home')">Home</button>
+            <button mat-button (click)="onNavigate('about-us')">About Us</button>
+            <button mat-button (click)="onNavigate('why-us')">Why Choose Us</button>
+            <button mat-button (click)="onNavigate('contact-us')">Contact Us</button>
+        </div>
+    </div>
+</nav>
+
+<app-banner id="home"></app-banner>
+<br />
+<app-about-us id="about-us"></app-about-us>
+<br />
+<app-why-us class="fill--primary" id="why-us"></app-why-us>
+<br />
+<app-contact-us id="contact-us"></app-contact-us>
+<br />
+<app-appointment-form id="appointment-form"></app-appointment-form>
+<br />
+<!-- <app-playlist id="youtube"></app-playlist> -->
+<br />
+
+<button mat-mini-fab color="primary" class="scroll-btn" (click)="onScrollTop()">
+    <mat-icon>keyboard_arrow_up</mat-icon>
+</button>
+
+<footer class="fill--primary">
+    <div class="branding">
+        <div class="brand-info">
+            <h2>RajyaLakshmi Neuro Care</h2>
+            <div>
+                <mat-icon>contact_phone</mat-icon>
+                <span>+91 {{info.mobile}}</span>
+            </div>
+            <div>
+                <mat-icon>contact_mail</mat-icon>
+                <span>{{info.email}}</span>
+            </div>
+        </div>
+        <div class="newsletter">
+            <h3>SUBSCRIBE TO OUR NEWSLETTER</h3>
+            <div>
+                <input type="email" autocomplete="off" placeholder="Enter Your Email" spellcheck="off"/>
+                <button mat-flat-button>Submit</button>
+            </div>
+            <p style="margin: 7px 0;">You"ll get an email about once a month. We"ll never share your address.</p>
+        </div>
+    </div>
+    <div class="social-icon">
+        <a href="javascript:void(0)" mat-icon-button>
+            <span class="icon-facebook-square"></span>
+        </a>
+        <a href="javascript:void(0)" mat-icon-button>
+            <span class="icon-google-plus-square"></span>
+        </a>
+        <a href="javascript:void(0)" mat-icon-button>
+            <span class="icon-twitter-square"></span>
+        </a>
+        <a href="javascript:void(0)" mat-icon-button>
+            <span class="icon-youtube-play"></span>
+        </a>
+    </div>
+</footer>

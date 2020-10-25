@@ -1,0 +1,40 @@
+:host {
+    display: block;
+    position: relative;
+}
+.filter__title {
+    margin: -24px 0 0 -24px;
+    height: 48px;
+    padding: 0 8px;
+    width: calc(100% + 32px);
+    font-size: 20px;
+    justify-content: flex-start !important;
+    border-bottom: 1px solid transparent;
+    button {
+        margin-right: 8px;
+    }
+}
+.filter__actions {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+        width: 48%;
+        border-radius: 18px;
+        &:first-child {
+            border-color: currentColor;
+        }
+    }
+}
+
+.filter__close {
+    position: absolute;
+    top: 0;
+    right: -24px;
+    height: 24px;
+    width: 24px;
+    line-height: 12px;
+}
+
+

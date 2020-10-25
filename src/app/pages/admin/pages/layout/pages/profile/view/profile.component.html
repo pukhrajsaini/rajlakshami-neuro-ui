@@ -1,0 +1,21 @@
+<div class="header text--primary">
+    Profile Details
+</div>
+<mat-horizontal-stepper selectedIndex="2">
+    <mat-step>
+        <ng-template matStepLabel>Contact Details</ng-template>
+        <app-contact-form></app-contact-form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Availability/Hospitals</ng-template>
+        <app-availability-form></app-availability-form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Why Choose Us</ng-template>
+        <app-choose-us-form></app-choose-us-form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>About Us</ng-template>
+        <app-availability-form></app-availability-form>
+    </mat-step>
+</mat-horizontal-stepper>

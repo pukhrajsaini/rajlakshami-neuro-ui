@@ -1,0 +1,7 @@
+1. full name
+2. email
+3. contact no
+4. appointmnet type(telemedicine, op-patient)
+5. complaints(Optional)
+6. Location
+7. telecalling type(whatsapp, deu, skype)

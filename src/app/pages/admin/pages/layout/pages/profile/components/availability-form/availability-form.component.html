@@ -1,0 +1,26 @@
+<form class="step-form">
+    <div class="hospital-form" *ngFor="let h of hospitals;let first = first">
+        <mat-form-field appearance="fill">
+            <mat-label>Hospital Name</mat-label>
+            <input type="text" matInput placeholder="Enter name" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Hospital Address</mat-label>
+            <input type="text" matInput placeholder="ex. Neuro Care" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Availability Time</mat-label>
+            <input type="email" matInput placeholder="abc@xyz.com" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Contact Number</mat-label>
+            <input type="tel" matInput placeholder="+91 12345 09876" />
+        </mat-form-field>
+        <button type="button" mat-mini-fab color="primary" *ngIf="first">
+            <mat-icon>add_box</mat-icon>
+        </button>
+        <button type="button" mat-mini-fab color="warn" *ngIf="!first">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,77 @@
+@import 'core';
+
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #fff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  width: 100%;
+  @include desktop-device(false) {
+    display: inline-block;
+  }
+}
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 48px 8%;
+  box-sizing: border-box;
+  @include tablet-device {
+    width: 100%;
+    padding: 48px 20%;
+  }
+  @include mobile-device {
+    width: 100%;
+    padding: 48px 48px;
+  }
+  p {
+    text-align: center;
+  }
+}
+.intro-banner {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  @include desktop-device(false) {
+    display: none;
+  }
+  svg {
+    height: 300px;
+    path {
+      stroke-width: 2px;
+      stroke: #FFF;
+      fill: transparent;
+      stroke-dasharray: 4000;
+      stroke-dashoffset: 4000;
+      animation: dash 3s linear forwards;
+    }
+  }
+}
+@keyframes dash {
+  99% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+    stroke-width: 2px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+    fill: #FFF;
+  }
+}

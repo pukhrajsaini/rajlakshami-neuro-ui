@@ -1,0 +1,26 @@
+<form class="step-form">
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input type="text" matInput placeholder="Enter" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Enter"></textarea>
+    </mat-form-field>
+    <div class="item" *ngFor="let h of list;let first = first">
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input type="text" matInput placeholder="Enter" />
+        </mat-form-field>
+        <button type="button" mat-mini-fab color="primary" *ngIf="first">
+            <mat-icon>add_box</mat-icon>
+        </button>
+        <button type="button" mat-mini-fab color="warn" *ngIf="!first">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Enter"></textarea>
+        </mat-form-field>
+    </div>
+</form>

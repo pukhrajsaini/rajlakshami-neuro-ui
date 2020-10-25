@@ -1,0 +1,50 @@
+@import "core";
+
+:host {
+  display: block;
+//   padding: 23px;
+  width: 600px;
+  box-sizing: border-box;
+  position: relative;
+  @include mobile-device {
+    width: 100vw;
+    padding: 0px;
+    flex-direction: column;
+    button[mat-mini-fab] {
+      display: none;
+    }
+    .actions {
+      display: flex;
+    }
+  }
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(#000, 0.1);
+}
+.popup-content {
+  max-height: calc(90vh - 64px);
+  overflow: hidden auto;
+}
+p {
+  color: #666;
+}
+
+.close-btn {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+}
+
+.actions {
+  border-top: 1px solid rgba(#000, 0.1);
+  padding: 7px 0;
+  display: none;
+  button {
+    flex: 1;
+  }
+}

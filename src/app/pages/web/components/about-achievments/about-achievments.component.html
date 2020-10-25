@@ -1,0 +1,17 @@
+<h2 class="text--primary">Achievments</h2>
+<ul>
+    <br/>
+    <li *ngFor="let achievment of achievments">
+        <h3>{{achievment.title}}</h3>
+        <p>{{achievment.description}}</p>
+    </li>
+</ul>
+<button mat-mini-fab class="close-btn" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+</button>
+<div class="actions">
+    <button mat-button color="accent" mat-dialog-close>
+        <mat-icon>close</mat-icon>&nbsp;
+        <span>CLOSE</span>
+    </button>
+</div>

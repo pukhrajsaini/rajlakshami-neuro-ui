@@ -1,0 +1,16 @@
+<app-table [tableSource]="tableSource">
+    <ng-template appFor="createdAt" let-appointment="row">
+        {{appointment.createdAt | date}}
+    </ng-template>
+    <ng-template appFor="actions">
+        <button mat-icon-button color="primary">
+            <mat-icon>visibility</mat-icon>
+        </button>
+        <button mat-icon-button color="primary">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </ng-template>
+</app-table>

@@ -1,0 +1,34 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.public-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: calc(50% - 60px);
+}
+.public-card {
+    position: relative;
+    background-color: #FFF;
+    max-width: 540px;
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.card-sidebar {
+    width: calc(50% - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-content {
+    flex: 1;
+    padding: 24px;
+}

@@ -1,0 +1,133 @@
+@import "core";
+
+:host {
+  position: relative;
+  // height: calc(100vh - 56px);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+div.wrapper {
+  width: 50%;
+  height: 100%;
+  max-width: 460px;
+  padding: 24px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.brand {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 40%;
+  padding: 48px 0;
+  background: linear-gradient(to right, white, #00acc1);
+  figure {
+    margin: 0 12px;
+    padding: 0;
+    width: 128px;
+    height: 128px;
+    display: block;
+    border-radius: 50% 50% 0 50%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px solid #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/assets/portfolio.jpg");
+  }
+  div {
+    flex: 1;
+    margin-left: 12px;
+    padding: 12px 0;
+    h1 {
+      margin-bottom: 4px;
+      font-weight: bold;
+      color: rgba(0, 0, 0, 0.7);
+    }
+    h2 {
+      margin: 0;
+    }
+    p {
+      font-size: 18px;
+    }
+    hr {
+      margin: 0;
+      border: 0;
+      border-top: 1px dashed rgba(#000, 0.5);
+      width: calc(100% - 24px);
+    }
+    ul {
+      padding-left: 18px;
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.slider {
+  // border: 2px solid rgba(#FFF, .8);
+  // margin-left: 56px;
+  background-color: rgba(#fff, 0.2);
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: left 0.3s ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip");
+  }
+  .slider-shadow {
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    right: 80%;
+    bottom: 0;
+    background: linear-gradient(to right, #00acc1, transparent);
+  }
+  .slider-btns {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(#000, 0.5);
+    display: flex;
+    align-items: center;
+    padding: 0 1px;
+    border-radius: 10px;
+    button {
+      margin: 3px;
+      background-color: rgba(#fff, 0.6);
+      border: none;
+      height: 8px;
+      width: 8px;
+      padding: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      &.active,
+      &:hover {
+        background-color: #fff;
+      }
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+}

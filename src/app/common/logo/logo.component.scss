@@ -1,0 +1,33 @@
+:host {
+  --size: 120px;
+  --color: var(--primary-color);
+  display: inline-block;
+  height: var(--size);
+  width: var(--size);
+  text-align: center;
+}
+
+svg {
+  height: 100%;
+  path {
+    stroke-width: 100px;
+    stroke: var(--color);
+    fill: transparent;
+    stroke-dasharray: 40000;
+    stroke-dashoffset: 40000;
+    animation: logo-dash 3s linear forwards;
+  }
+}
+
+@keyframes logo-dash {
+  99% {
+    stroke-dashoffset: 0;
+    fill: transparent;
+    stroke-width: 100px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+    fill: var(--color);
+  }
+}

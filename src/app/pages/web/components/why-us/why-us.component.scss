@@ -1,0 +1,92 @@
+@import "core";
+
+:host {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  & > div {
+    width: 50%;
+  }
+  @include mobile-device {
+    flex-direction: column;
+  }
+}
+app-slider {
+  flex: 1;
+}
+.choose-image {
+  position: relative;
+  overflow: hidden;
+  figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    transition: left .3s ease-in-out;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip");
+  }
+  .slider-btns {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(#000, 0.5);
+    display: flex;
+    align-items: center;
+    padding: 0 1px;
+    border-radius: 10px;
+    button {
+      margin: 3px;
+      background-color: rgba(#fff, 0.6);
+      border: none;
+      height: 8px;
+      width: 8px;
+      padding: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      outline: none;
+      &.active,
+      &:hover {
+        background-color: #fff;
+      }
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+.choose-content {
+  padding: 24px;
+  box-sizing: border-box;
+  @include mobile-device {
+    width: 100% !important;
+    li {
+      width: 100% !important;
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      width: 50%;
+      h3 {
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+      mat-icon {
+        margin-right: 7px;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<app-public>
+    <form [formGroup]="loginForm">
+        <h2 class="text--primary" style="margin-bottom: 3px;">Admin Login</h2>
+        <p style="margin-bottom: 20px;">Enter your details below to access your account.</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Email ID</mat-label>
+            <input matInput formControlName="email" type="email" placeholder="Enter your email" />
+            <mat-icon matPrefix color="primary" style="margin-right: 7px;">email</mat-icon>
+            <mat-error>{{ loginForm.controls.email.errors | validate : 'Email ID' }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="margin-top: 9px;">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="isPasswordShown ? 'text' : 'password'" placeholder="Enter password" />
+            <mat-icon matPrefix color="primary" style="margin-right: 7px;">lock</mat-icon>
+            <mat-icon role="button" style="cursor: pointer;" (click)="isPasswordShown = !isPasswordShown" matSuffix color="primary">
+                {{isPasswordShown ? 'visibility' : 'visibility_off'}}
+            </mat-icon>
+            <mat-error>{{ loginForm.controls.password.errors | validate : 'Password' }}</mat-error>
+        </mat-form-field>
+        <div class="actions">
+            <a href="javascript:void(0)" mat-stroked-button color="primary" [routerLink]="passwordUrl">
+                Forgot Password?
+            </a>
+            <button mat-flat-button type="button" color="primary" [disabled]="loginForm.disabled" (click)="onSubmitHandler()">
+                <mat-icon>exit_to_app</mat-icon>&nbsp;&nbsp;
+                <span>LOG IN</span>
+            </button>
+        </div>
+    </form>
+</app-public>

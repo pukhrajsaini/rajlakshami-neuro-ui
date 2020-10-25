@@ -1,0 +1,61 @@
+@import "core";
+
+:host {
+  display: block;
+  width: 600px;
+  box-sizing: border-box;
+  position: relative;
+  @include mobile-device {
+    width: 100vw;
+    padding: 0px;
+    flex-direction: column;
+    button[mat-mini-fab] {
+      display: none;
+    }
+    .actions {
+      display: flex;
+    }
+  }
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(#000, .1);
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-height: 70vh;
+  display: block;
+  overflow: auto;
+  li {
+    box-sizing: border-box;
+    padding: 0 16px;
+    h3 {
+        margin: 4px 0;
+        font-weight: 500;
+    }
+    p {
+        color: #444;
+    }
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+}
+
+.actions {
+  border-top: 1px solid rgba(#000, .1);
+  padding: 7px 0;
+  display: none;
+  button {
+    flex: 1;
+  }
+}

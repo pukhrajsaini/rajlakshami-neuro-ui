@@ -1,0 +1,48 @@
+@import "core";
+
+:host {
+  display: flex;
+  width: 680px;
+  position: relative;
+  @include mobile-device {
+    width: 100%;
+    flex-direction: column;
+    button[mat-mini-fab] {
+      display: none;
+    }
+    .actions {
+      display: flex;
+    }
+  }
+}
+.profile-image {
+  width: 280px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("https://images.theconversation.com/files/304957/original/file-20191203-66986-im7o5.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip");
+}
+.profile-wrapper {
+    flex: 1;
+    padding: 16px;
+}
+.title {
+    margin-bottom: 0px;
+}
+.sub-title {
+    margin-bottom: 4px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+}
+.actions {
+  border-top: 1px solid rgba(#000, .1);
+  padding: 7px 0;
+  display: none;
+  button {
+    flex: 1;
+  }
+}

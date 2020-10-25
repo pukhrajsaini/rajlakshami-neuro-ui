@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ng.theme";
+@import "assets/fonts/social/social.scss";
+// @import "assets/fonts/verdana/verdana.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background-color: rgba(#000, 0.04);
+  font-family: "Roboto", sans-serif !important;
+  overflow: hidden;
+}
+
+.button--round {
+  border-radius: 25px !important;
+  border-color: currentColor !important;
+}
+mat-icon {
+  --size: 24px;
+  height: var(--size) !important;
+  width: var(--size) !important;
+  font-size: var(--size) !important;
+}
+.custom-panel {
+  font-family: "Grenze", serif !important;
+  mat-dialog-container {
+    padding: 1px;
+    overflow: visible;
+  }
+  @include mobile-device {
+    max-width: 100% !important;
+    align-self: flex-end;
+  }
+}
+.custom-shadow {
+  background-color: rgba(#000, 0.8);
+}
+
+th[data-center="true"] div {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,136 @@
+<div class="form-wrapper">
+    <div class="appointment-info">
+        <h2 class="text--primary">BOOK AN APPOINTMENT</h2>
+        <br/><br/>
+        <img src="https://cdnsite.schedule.ly/images/schedulely.svg" alt="appointment"/>
+        <!-- <mat-icon color="primary">event_available</mat-icon>
+        <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web
+            designs. The passage is attributed to an unknown typesetter in the 15th century</p> -->
+    </div>
+    <form [formGroup]="formGroup" class="appointment-form">
+        <mat-horizontal-stepper>
+            <mat-step [stepControl]="patientForm">
+                <ng-template matStepLabel>Patient Details</ng-template>
+                <div class="step-wrapper" formGroupName="patient">
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput formControlName="name" type="text" placeholder="Enter name" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender">
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                            <mat-option value="Other">Other</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Email ID</mat-label>
+                        <input matInput formControlName="email" type="email" placeholder="abc@xyz.com" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Contact No</mat-label>
+                        <input matInput formControlName="mobile" type="tel" placeholder="XXXXX 12345" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Patient Age</mat-label>
+                        <input matInput formControlName="age" type="number" placeholder="Enter" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Place Name</mat-label>
+                        <input matInput formControlName="place" type="text" placeholder="Enter Name" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Occupation</mat-label>
+                        <input matInput formControlName="occupation" type="text" placeholder="Enter" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Identity No</mat-label>
+                        <input matInput formControlName="id" type="text" placeholder="Enter ID" />
+                        <mat-hint>Aadhar/PAN/Voter ID</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="form-actions">
+                    <button mat-stroked-button color="primary">Reset</button>
+                    <button mat-flat-button color="primary" matStepperNext>
+                        <mat-icon>arrow_forward</mat-icon>&nbsp;
+                        <span>Next</span>
+                    </button>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="appointmentForm">
+                <ng-template matStepLabel>Appointment Details</ng-template>
+                <div class="step-wrapper" formGroupName="appointment">
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Preferred Date & Time</mat-label>
+                        <input matInput formControlName="time" type="datetime-local" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Appointment Type</mat-label>
+                        <mat-select formControlName="type">
+                            <mat-option value="Telemedicine">Telemedicine</mat-option>
+                            <mat-option value="Outpatient">Outpatient</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Appointment Location</mat-label>
+                        <mat-select formControlName="location">
+                            <ng-template ngFor [ngForOf]="locations" let-location>
+                                <mat-option [value]="location">{{ location }}</mat-option>
+                            </ng-template>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="inline-field">
+                        <mat-label>Telecall Mode</mat-label>
+                        <mat-select formControlName="mode">
+                            <mat-option>Skype</mat-option>
+                            <mat-option>Whatsapp</mat-option>
+                            <mat-option>Google Duo</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Clinical Complaints (Optional)</mat-label>
+                        <textarea matInput formControlName="complaint" rows="4" placeholder="Enter complaints"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="form-actions">
+                    <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+                    <button mat-flat-button color="primary" matStepperNext>
+                        <mat-icon>arrow_forward</mat-icon>&nbsp;
+                        <span>Next</span>
+                    </button>
+                </div>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Payment</ng-template>
+                <div class="step-wrapper" style="justify-content: center;">
+                    <p class="coming text--accent">Coming Soon</p>
+                </div>
+                <div class="form-actions">
+                    <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+                    <button mat-flat-button color="primary" matStepperNext>
+                        Skip Payment & Submit
+                    </button>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+        <!-- <h2 class="text--primary">Appointment Form</h2>
+        <mat-form-field appearance="fill" class="inline-field">
+            <mat-label>Full Name</mat-label>
+            <input matInput type="text" placeholder="Enter name" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="inline-field">
+            <mat-label>Email ID</mat-label>
+            <input matInput type="email" placeholder="Enter email" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="inline-field">
+            <mat-label>Contact No</mat-label>
+            <input matInput type="tel" placeholder="Enter mobile" />
+        </mat-form-field>
+        
+        <div class="form-actions">
+            <button mat-flat-button color="primary">Submit</button>
+            <button mat-stroked-button color="primary">Reset</button>
+        </div> -->
+    </form>
+</div>

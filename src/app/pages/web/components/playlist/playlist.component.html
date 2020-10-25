@@ -1,0 +1,15 @@
+<button class="navigate navigate-left mat-elevation-z3" #btnLeft mat-icon-button color="primary" disabled (click)="onNavigateHandler(-1)">
+    <mat-icon>navigate_before</mat-icon>
+</button>
+<ul class="services-list" #playlist>
+    <li class="mat-elevation-z1" *ngFor="let video of videos">
+        <figure class="thumbnail" [style.background-image]="video.thumbnail">
+            <span>12:30</span>
+        </figure>
+        <a class="video-title text--primary" href="javascript:void(0)">{{video.title}}</a>
+        <span class="video-time">{{ video.publishedAt | date }}</span>
+    </li>
+</ul>
+<button class="navigate navigate-right mat-elevation-z3" #btnRight mat-icon-button color="primary" (click)="onNavigateHandler(1)">
+    <mat-icon>navigate_next</mat-icon>
+</button>

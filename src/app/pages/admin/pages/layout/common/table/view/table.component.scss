@@ -1,0 +1,121 @@
+@import "core";
+
+:host {
+  display: block;
+  border-radius: $card-radius;
+  overflow: hidden;
+}
+.table-box__header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  height: 56px;
+}
+.table-title {
+  font-size: 24px;
+  font-weight: 500;
+}
+.table-search {
+  height: 36px;
+  border-radius: 20px;
+  margin-right: 7px;
+  position: relative;
+  mat-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &:first-child {
+      --size: 20px;
+      left: 8px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    &:last-child {
+      --size: 16px;
+      right: 6px;
+      cursor: pointer;
+    }
+  }
+  input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 24px 0 28px;
+    font-size: 14px;
+    font-family: inherit;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid rgba(#000, 0.12);
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+      display: none;
+    }
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    &:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 1px var(--primary-color);
+    }
+  }
+}
+.filter-btn {
+  border: 1px solid rgba(#000, 0.12);
+}
+mat-form-field {
+  width: 280px;
+  padding: 5px 15px;
+}
+.search-clear {
+  --size: 20px;
+  cursor: pointer;
+  transform: translateY(5px);
+}
+.search-clear--disabled {
+  pointer-events: none;
+  color: #aaa;
+  cursor: default;
+}
+.table-container {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  min-width: 680px;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.table-header {
+  font-size: 16px;
+}
+.center {
+  text-align: center;
+}
+.table__placeholder {
+  font-size: 32px;
+  height: 200px;
+  color: grey;
+}
+.hidden {
+  display: none !important;
+}
+mat-paginator {
+  background-color: transparent;
+}
+// .table-row:hover {
+//   background-color: rgba(#000, .05);
+// }
+.content--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

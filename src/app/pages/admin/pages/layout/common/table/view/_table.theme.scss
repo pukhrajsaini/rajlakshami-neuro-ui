@@ -1,0 +1,9 @@
+@mixin table-theming($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, 'background');
+    jdz-table {
+        background-color: map-get($background, 'card');
+    }
+} 

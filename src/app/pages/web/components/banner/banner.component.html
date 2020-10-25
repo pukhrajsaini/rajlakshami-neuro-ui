@@ -1,0 +1,33 @@
+<div class="brand">
+    <figure class="text--primary"></figure>
+    <div>
+        <h1>Dr. Rajyalkshmi Idpuganti</h1>
+        <p>Founder Chairman and Chief Nueurosurgeon</p>
+        <h2>Qualification</h2>
+        <hr />
+        <ul>
+            <li>MBBS</li>
+            <li>MCh - NeuroSurgery</li>
+            <li>Fellowship in Micro Neurosurgery-Hanover</li>
+            <li>Fellowship in Endoscopy-Mainz</li>
+            <li>International Fellow Of American Association Of Neurological Surgeons</li>
+        </ul>
+        <h2>Clinical OPD Days/Time</h2>
+        <hr />
+        <ul>
+            <li>Health Hospital Tenali &nbsp;&nbsp; (24/7)</li>
+            <li>Health Hospital Tenali &nbsp;&nbsp; (24/7)</li>
+            <li>Health Hospital Tenali &nbsp;&nbsp; (24/7)</li>
+            <li>Health Hospital Tenali &nbsp;&nbsp; (24/7)</li>
+        </ul>
+    </div>
+</div>
+<div class="slider">
+    <figure [style.background-image]="img" *ngFor="let img of slider">
+    </figure>
+    <div class="slider-shadow"></div>
+    <div class="slider-btns">
+        <button [class.active]="sliderIndex === i" (click)="onSlideHandler(i)"
+            *ngFor="let img of slider;let i = index"></button>
+    </div>
+</div>

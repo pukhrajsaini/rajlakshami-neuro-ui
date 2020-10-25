@@ -1,0 +1,11 @@
+<div class="card__header filter__title content--center text--primary">
+  <button mat-icon-button (click)="onCancelHandler()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span>{{label}}</span>
+</div>
+<ng-content></ng-content>
+<div class="filter__actions">
+  <button mat-stroked-button color="primary" (click)="resetFilter.emit()">Reset</button>
+  <button mat-flat-button color="primary" (click)="applyFilter.emit()" [disabled]="disabled">Apply</button>
+</div>

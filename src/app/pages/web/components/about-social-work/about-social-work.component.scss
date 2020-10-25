@@ -1,0 +1,51 @@
+@import "core";
+
+:host {
+  display: block;
+  width: 600px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/assets/social-work.jpg");
+  margin: -1px;
+  border-radius: 4px;
+  padding: 24px 24px 0;
+  text-align: center;
+  box-sizing: border-box;
+  @include mobile-device {
+    width: 100%;
+    flex-direction: column;
+    padding: 24px 12px 0;
+    button[mat-mini-fab] {
+      display: none;
+    }
+    .actions {
+      display: flex;
+    }
+  }
+}
+
+h2 {
+    margin: 2px 0;
+}
+p {
+    color: #666;
+}
+.trust-btn {
+    color: #ffffff;
+    background-color: #00aa55;
+}
+.close-btn {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+}
+.actions {
+  border-top: 1px solid rgba(#000, .1);
+  padding: 7px 0;
+  display: none;
+  button {
+    flex: 1;
+  }
+}

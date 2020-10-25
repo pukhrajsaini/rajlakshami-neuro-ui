@@ -1,0 +1,17 @@
+mat-form-field {
+    width: 100%;
+}
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    // width: calc(50% - 6px);
+    width: 100%;
+    mat-form-field:first-child {
+        width: calc(100% - 48px);
+    }
+    button {
+        box-shadow: none;
+        margin-top: 7px;
+    }
+}

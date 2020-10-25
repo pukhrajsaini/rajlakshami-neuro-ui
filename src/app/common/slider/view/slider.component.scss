@@ -1,0 +1,52 @@
+:host {
+    --height: 500px;
+    --width: 500px;
+    width: var(--width);
+    height: var(--height);
+    display: flex;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    perspective-origin: 50%;
+    overflow: hidden;
+    &:hover {
+        transform: rotateY(-30deg);
+    }
+}
+:host-context([data-dir=left]),
+:host-context([data-dir=right]) {
+    flex-direction: column;
+    // .slice {}
+}
+
+:host-context([data-dir=top]),
+:host-context([data-dir=bottom]) {
+    flex-direction: row;
+}
+.slice {
+    flex: 1;
+    transform-origin: center;
+    transition: all .3s linear;
+    position: relative;
+    transform: translateZ(-250px);
+    transform-style: preserve-3d;
+    & > div {
+        border: 1px dotted rgba(#000, .1);
+        background-color: rgba(#000, .3);
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        &:nth-child(1) {
+            display: none;
+            transform-origin: center;
+            transform: translateZ(250px);
+        }
+        &:nth-child(2) {
+            transform-origin: right;
+            transform: translateZ(-250px) rotateY(-90deg);
+            background-color: red;
+        }
+    }
+}

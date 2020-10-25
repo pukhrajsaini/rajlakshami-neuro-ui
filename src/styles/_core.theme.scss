@@ -1,0 +1,73 @@
+@import 'core';
+
+@mixin core-theming($theme) {
+    $foreground: map-get($theme, 'foreground');
+    $background: map-get($theme, 'background');
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+
+    $primary-color: mat-color($primary);
+    $accent-color: mat-color($accent);
+    $warn-color: mat-color($warn);
+    $text-color: map-get($foreground, 'text');
+    $seconday-color: map-get($foreground, secondary-text);
+    $disabled-color: map-get($foreground, disabled-text);
+
+    body {
+        --primary-color: #{$primary-color};
+        --primary-ripple: #{transparentize($primary-color, .9)};
+        background-color: map-get($background, 'background');
+        color: $text-color;
+    }
+    .button-loader {
+        color: $primary-color;
+    }
+    .text--secondary {
+        color: $seconday-color !important;
+    }
+    .card {
+        background-color: map-get($background, card);
+    }
+    
+    .text--primary:not(:disabled) {
+        color: $primary-color !important;
+    }
+    .text--accent:not(:disabled) {
+        color: $accent-color !important;
+    }
+    .text--warn:not(:disabled) {
+        color: $warn-color !important;
+    }
+    .text--success:not(:disabled) {
+        color: $success-color !important;
+    }
+    .text--disabled:not(:disabled) {
+        cursor: default;
+        color: $disabled-color !important;
+    }
+    .fill--gradient:not(:disabled) {
+        background: linear-gradient(to right, $primary-color, $success-color);
+        color: #FFF;
+    }
+    .fill--primary:not(:disabled) {
+        background-color: $primary-color;
+    }
+    .fill--accent:not(:disabled) {
+        background-color: $accent-color;
+    }
+    .fill--warn:not(:disabled) {
+        background-color: $warn-color;
+    }
+    .fill--success:not(:disabled) {
+        background-color: $success-color;
+    }
+    .list-item {
+        background-color: mat-color($primary, 500);
+        color: #FFF;
+        &::before {
+            background-color: mat-color($primary, 700);
+        }
+    }
+}
+

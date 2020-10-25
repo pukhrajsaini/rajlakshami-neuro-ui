@@ -1,0 +1,81 @@
+@import "core";
+
+:host {
+  display: block;
+  background-color: #fff;
+}
+.form-wrapper {
+  margin: 0 auto;
+  max-width: 1080px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+@include mobile-device {
+  .form-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .appointment-form,
+  .appointment-info {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+}
+
+.appointment-info,
+.appointment-form {
+  box-sizing: border-box;
+  padding: 16px 28px;
+  text-align: center;
+}
+.appointment-info {
+  width: 40%;
+  // mat-icon {
+  //   --size: 28px;
+  //   padding: 18px;
+  //   border: 1px solid currentColor;
+  //   border-radius: 50%;
+  //   margin-bottom: 16px;
+  // }
+  h2 {
+    margin: 24px 0;
+  }
+  img {
+    width: 100%;
+  }
+}
+.appointment-form {
+  width: 60%;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+.step-wrapper {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inline-field {
+  display: inline-block;
+  width: 48% !important;
+}
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+.appointment-divider {
+  width: 1px;
+  margin: 12px 0;
+  background-color: rgba(#000, 0.07);
+}
+
+.coming {
+  opacity: .5;
+  font-size: 24px;
+  padding: 36px 0;
+  margin-bottom: 24px;
+}

@@ -1,0 +1,17 @@
+<h2 class="title-text text--primary">About Us</h2>
+<div class="wrapper">
+    <button class="navigate navigate-left mat-elevation-z3" #btnLeft mat-icon-button color="primary" disabled (click)="onNavigateHandler(-1)">
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+    <ul class="services-list" #serviceList>
+        <li class="mat-elevation-z1" *ngFor="let service of services">
+            <mat-icon color="primary">{{service.icon}}</mat-icon>
+            <h2>{{ service.name }}</h2>
+            <p>{{service.description}}</p>
+            <button mat-flat-button color="primary" (click)="onShowMore(service.component)">More</button>
+        </li>
+    </ul>
+    <button class="navigate navigate-right mat-elevation-z3" #btnRight mat-icon-button color="primary" (click)="onNavigateHandler(1)">
+        <mat-icon>navigate_next</mat-icon>
+    </button>
+</div>
